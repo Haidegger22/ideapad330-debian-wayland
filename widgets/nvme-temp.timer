@@ -1,0 +1,8 @@
+[Unit]
+Description=Опрос температуры NVMe каждые 30 секунд
+[Timer]
+OnBootSec=20
+OnUnitActiveSec=30
+AccuracySec=5
+[Install]
+WantedBy=timers.target

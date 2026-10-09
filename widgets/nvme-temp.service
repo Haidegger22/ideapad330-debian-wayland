@@ -1,0 +1,5 @@
+[Unit]
+Description=Температура внешнего NVMe в файл для виджета панели
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/nvme-temp.sh

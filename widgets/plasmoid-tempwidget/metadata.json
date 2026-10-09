@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Haidegger22"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Температура процессора и внешнего NVMe",
+        "Icon": "temperature-normal",
+        "Id": "ru.user.tempwidget",
+        "License": "MIT",
+        "Name": "Температуры CPU и NVMe",
+        "Version": "1.0",
+        "Website": "https://github.com/Haidegger22/ideapad330-debian-wayland"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
