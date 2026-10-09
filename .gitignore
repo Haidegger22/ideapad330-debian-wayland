@@ -1,0 +1,5 @@
+*.log
+*.img
+*.bin
+/tmp/
+.DS_Store
