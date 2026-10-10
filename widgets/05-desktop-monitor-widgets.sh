@@ -32,7 +32,7 @@ E 'var d = desktops()[0];
    var jobs = [
      {plugin: "org.kde.plasma.systemmonitor.cpu",       title: "CPU", hi: ["cpu/all/usage"]},
      {plugin: "org.kde.plasma.systemmonitor.memory",    title: "RAM", hi: ["memory/physical/used"]},
-     {plugin: "org.kde.plasma.systemmonitor.diskusage", title: "SSD", hi: ["disk/all/used"]}
+     {plugin: "org.kde.plasma.systemmonitor.diskusage", title: "SSD", hi: []}
    ];
    var out = [];
    for (var i = 0; i < jobs.length; i++) {
@@ -50,7 +50,10 @@ E 'var d = desktops()[0];
      a.currentConfigGroup = ["Sensors"];
      a.writeConfig("highPrioritySensorIds", j.hi);
      if (j.title == "SSD") {
-       a.writeConfig("totalSensors", ["disk/all/used", "disk/all/total"]);
+       // Ключ к нужному виду кружка: объёмы в байтах (used/free), а не проценты.
+       // С highPrioritySensorIds=[disk/all/used] plasma подставляет usedPercent
+       // и вместо «17,9 ГиБ» показывает «Доля использования 7,7%».
+       a.writeConfig("totalSensors", ["disk/all/used", "disk/all/free"]);
        a.writeConfig("lowPrioritySensorIds", []);
      }
      a.reloadConfig();
